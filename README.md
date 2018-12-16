@@ -1,15 +1,7 @@
-## Documentacion
-empeando \n
+### IOT-SensorNetwork
+This repository contains a system for monitoring diverse conditions of Bees using microsensors and a sensors network
 
+## INTEL EDISON
+Los agentes que son conformados por los Intel edison es necesario 
 
-lasndlads
-### Imagenes
-![20181130_170958](https://user-images.githubusercontent.com/38712579/50048311-6d436480-008e-11e9-809b-287d51e0f5d8.jpg)
-
-
-## Nuevo continiedo
-adfjkdsbjfksdjfsdj
-djfafsdf
-
-## dkfjdf
-https://github.com/Evilojitos/Documentacion.wiki.git
+#### Ensamble del Intel Edison
