@@ -2,25 +2,25 @@
 //descripcion
 
 ### Intel Edison
-1.-Armar el Intel Edison
-    Es necesario que aprender armar correctamente el Intel Edison por lo cual se recomienda leer la documentación de Intel o visitar la página https://software.intel.com/en-us/node/628221 para aprender a ensamblar el Intel Edison. Ademas es necesario acoplar "TARJETA ARDUINO" como en la siguiente imagen
+#### 1.-Armar el Intel Edison
+Es necesario que aprender armar correctamente el Intel Edison por lo cual se recomienda leer la documentación de Intel o visitar la página https://software.intel.com/en-us/node/628221 para aprender a ensamblar el Intel Edison. Ademas es necesario acoplar "TARJETA ARDUINO" como en la siguiente imagen
 										
 										IMAGEN PARA COLOCAR LA TAREATA ARDUINO EN EL EDISON
 
-2.- Flashear Intel Edison
-    Es necesario flashear el Intel Edison con la imagen que ya cuenta con las herramientas necesarias si no cuenta con una puede descargar una versión de YOCTO para esto se deberá descargar la herramienta "Intel Phone Flash Tool Lite" de la página de Intel en la pagina https://software.intel.com/en-us/get-started-edison-windows-step2.
-	Nota: en caso de contar con alguna imagen ya creada con los archivos y herramientas encesarias siga el paso 2 y posteriormente salte hasta el paso 14.
+#### 2.- Flashear Intel Edison
+Es necesario flashear el Intel Edison con la imagen que ya cuenta con las herramientas necesarias si no cuenta con una puede descargar una versión de YOCTO para esto se deberá descargar la herramienta "Intel Phone Flash Tool Lite" de la página de Intel en la pagina https://software.intel.com/en-us/get-started-edison-windows-step2.
+Nota: en caso de contar con alguna imagen ya creada con los archivos y herramientas encesarias siga el paso 2 y posteriormente salte hasta el paso 14.
 	
-	A)Despues de la instalcion del software seleccionamos la unidad donde se encuentra el intel edison
+A)Despues de la instalcion del software seleccionamos la unidad donde se encuentra el intel edison
 										IMAGEN DE COMO FLASHEAR LA IMAGEN
-	B)seleccionamos la ruta de la imagen de YOCTO o la imagen precreada con todas las errameintas necesarias
+B)seleccionamos la ruta de la imagen de YOCTO o la imagen precreada con todas las errameintas necesarias
 										IMAGEN CON TODOS LOS PARAMETROS PUESTOS
-3.-Establecer una session de consola con el Intel Edison
-   Para establecer una session de consola con el Intel Edison sera necesario tener instalado Putty(Windows y Ubuntu), Bitvise, etc. La configuracion para la conexion es puerto 22, velocidad 115200 se podra ver en la siguiente ademas debes de ssaber el numero de puerto de com se puede saber en administrador de dispositivos > "ALGO AQUI" y nos dara el numero de puerto que esta siendo utlizado con esta informacion estableceremos la session de consola.
+#### 3.-Establecer una session de consola con el Intel Edison
+Para establecer una session de consola con el Intel Edison sera necesario tener instalado Putty(Windows y Ubuntu), Bitvise, etc. La configuracion para la conexion es puerto 22, velocidad 115200 se podra ver en la siguiente ademas debes de ssaber el numero de puerto de com se puede saber en administrador de dispositivos > "ALGO AQUI" y nos dara el numero de puerto que esta siendo utlizado con esta informacion estableceremos la session de consola.
    
    										IMAGEN DE PUTTY
 
-3.-Configurar la red
+#### 4.-Configurar la red
     Para efectuar la configuración correctamente seguir los pasos o revisar la documentación para conectarse al wifi en https://www.intel.com/content/dam/support/us/en/documents/edison/sb/edison_wifi_331438001.pdf, si se tiene duda sobre los siguientes pasos se puede consultar la siguiente pagina https://software.intel.com/en-us/connecting-your-intel-edison-board-using-wifi
     Pasos:
         1.	Establecer una sesión de consola con el Intel Edison.
@@ -35,8 +35,8 @@
         10. reiniciar(reboot)
 
 
-4.- Configurando el wpa_supplicant de Edison
-    El Intel Edison usa el servicio wpa_supplicant para administrar la conexión Wi-Fi en modo cliente. Cuando se configure en un ambiente controlado (no en el lugar final) si se desea borrar los registros de las otras redes el archivo de configuración wpa_supplicant se encuentra en: /etc/wpa_supplicant/wpa_supplicant.conf 
+5.- Configurando el wpa_supplicant de Edison
+El Intel Edison usa el servicio wpa_supplicant para administrar la conexión Wi-Fi en modo cliente. Cuando se configure en un ambiente controlado (no en el lugar final) si se desea borrar los registros de las otras redes el archivo de configuración wpa_supplicant se encuentra en: /etc/wpa_supplicant/wpa_supplicant.conf 
 
     NOTA: en caso de alguna duda se puede consultar http://rwx.io/blog/2015/08/16/edison-wifi-config/ para ver las demás configuraciones del wpa_supplicant
 
