@@ -3,9 +3,9 @@
 
 ### Intel Edison
 #### 1.-Armar el Intel Edison
-Es necesario que aprender armar correctamente el Intel Edison por lo cual se recomienda leer la documentación de Intel o visitar la página https://software.intel.com/en-us/node/628221 para aprender a ensamblar el Intel Edison. Ademas es necesario acoplar "TARJETA ARDUINO" como en la siguiente imagen
-										
-										IMAGEN PARA COLOCAR LA TAREATA ARDUINO EN EL EDISON
+Es necesario que aprender armar correctamente el Intel Edison por lo cual se recomienda leer la documentación de Intel o visitar la página https://software.intel.com/en-us/node/628221 para aprender a ensamblar el Intel Edison. Ademas es necesario acoplar "TARJETA ARDUINO" como en la siguiente imagen									
+
+![20181130_170958](https://user-images.githubusercontent.com/38712579/50048311-6d436480-008e-11e9-809b-287d51e0f5d8.jpg)
 
 #### 2.- Flashear Intel Edison
 Es necesario flashear el Intel Edison con la imagen que ya cuenta con las herramientas necesarias si no cuenta con una puede descargar una versión de YOCTO para esto se deberá descargar la herramienta "Intel Phone Flash Tool Lite" de la página de Intel en la pagina https://software.intel.com/en-us/get-started-edison-windows-step2.
