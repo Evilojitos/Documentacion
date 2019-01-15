@@ -50,7 +50,7 @@ NOTA: en caso de alguna duda se puede consultar la documentación en https://com
 A) Instalación
 	
 	1.- Iniciamos con una sesión de consola con Putty y posteriormente ingrese el siguiente comando en la terminal:
-        wget ftp.postgresql.org/pub/source/v9.3.2/postgresql-9.3.2.tar.bz2
+        	wget ftp.postgresql.org/pub/source/v9.3.2/postgresql-9.3.2.tar.bz2
 	2.- Descomprimir el archivo el archivo con el siguiente comando en terminal:
         	tar jxf postgresql-9.3.2.tar.bz2
 	3.- Acceder a la carpeta con el siguiente comando en terminal:
@@ -70,7 +70,7 @@ B) Configuración
 	
 	1.- Agregar un usuario con el siguiente comando en terminal:
         	useradd postgres
-    	2.- Cambiar los permisos recursivamente, haga que postgres sea propietario de la carpeta de instalación de postgres con el siguiente comando en terminal:
+	2.- Cambiar los permisos recursivamente, haga que postgres sea propietario de la carpeta de instalación de postgres con el siguiente comando en terminal:
         	chown -R postgres: postgres/opt/PostgreSQL-9/
         	cd /opt/PostgreSQL-9/bin/
         	initdb -D /folder/for/ dbs
@@ -90,19 +90,21 @@ B) Configuración
 	
 #### 8.- Instalacion de Python
 Pasos:
-    1.- Es necesario estar conectado a internet
-    2.- curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-    3.- python get-pip.py
-    4.- pip install paho-mqtt
-    5.- pip install psycopg2
-    6.- pip install configure
+	
+	1.- Es necesario estar conectado a internet
+	2.- curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+	3.- python get-pip.py
+	4.- pip install paho-mqtt
+	5.- pip install psycopg2
+	6.- pip install configure
     
 #### 9.- Pasar los archivos esenciales para el Edison.
 Si empleara la balanza Alemana Emplear la carpeta ScriptFuncionales - Alemana o ScriptFuncionales
-1.- Crear una carpeta llamada ScriptFuncionales en la dirección raíz puede seguir los siguientes comandos:
-    cd /
-    mkdir ScriptFuncionales
-2.- Copiar los archivos de la carpeta ScriptsFuncionales.zip ubicados en la carpeta Intel Edison > funcionalidad a la carpeta del Intel Edison creada en el paso 1.
+
+	1.- Crear una carpeta llamada ScriptFuncionales en la dirección raíz puede seguir los siguientes comandos:
+    		cd /
+    		mkdir ScriptFuncionales
+	2.- Copiar los archivos de la carpeta ScriptsFuncionales.zip ubicados en la carpeta Intel Edison > funcionalidad a la carpeta del Intel Edison creada en el paso 1.
     
 #### 10.- Copiar los demonios
 Copiar contenido de la carpeta "Demonios" en /lib/systemd/system/
@@ -141,76 +143,83 @@ Se deberá de conectar teclado, mouse, cable HDMI e insertar la memoria microSD 
 
 #### 3.- Configurar el Raspberry
 -encender la Raspberry pi (conecte el cable de alimentación al Raspberry para encenderlo)
-1.-Una vez iniciando el sistema deberá hacer clic en la frambuesa > Preferencias > Configuración de Raspberry Pi.
-en la pestaña de interfaces activar cámara, shh, spi, I2C, serial port, 1-Wire, Remote GPIO.
-2.-Posteriormente cambiar a la pestaña de localización y configurar
-1.- local
-    2.- Zona horaria
-    3.- teclado
-    4.- Dar aceptar y pedirá reiniciar el Raspberry y lo reinicia
-3.-Se deberá de actualizar el Raspberry abra una consola de comando e ingrese el siguiente comando:
-	sudo apt-get update
-posteriormente ingrese el siguiente comando:
-	sudo apt-get upgrade
-4.-Reinicia el Raspberry.
+
+	1.- Una vez iniciando el sistema deberá hacer clic en la frambuesa > Preferencias > Configuración de Raspberry Pi.
+	2.- En la pestaña de interfaces activar cámara, shh, spi, I2C, serial port, 1-Wire, Remote GPIO.
+	2.- Posteriormente cambiar a la pestaña de localización y configurar
+		A) local
+    		B) Zona horaria
+    		C) teclado
+    		D) Dar aceptar y pedirá reiniciar el Raspberry y lo reinicia
+	3.-Se deberá de actualizar el Raspberry abra una consola de comando e ingrese el siguiente comando:
+		sudo apt-get update
+	   posteriormente ingrese el siguiente comando:
+		sudo apt-get upgrade
+	4.-Reinicia el Raspberry.
 
 #### 4.- Instalacion del proyecto de Git
 Para el uso de la tarjeta GrovePi+ es necesario clonar el siguiente proyecto se podrá realizar con el siguiente comando en consola:
- 	git clone https://github.com/DexterInd/GrovePi
- Posteriormente deberemos de instalarlo con el siguiente comando:
- 	sudo bash /home/pi/Dexter/GrovePi/Script/install_scratch.sh
- Para realizar la última actualización del firmware por lo cual nos posicionaremos en la carpeta llamada "Firmware" dentro del proyecto y posteriormente cambiaremos los permisos de un script para realizar la actualización:
- 	sudo chmod +x firmware_update.sh
- A continuación, ejecutaremos el archivo:
- 	sudo ./firmware_update.sh
+ 	
+	1.- Clonamos el repositorio en el escritorio
+		cd /Desktop
+	 	git clone https://github.com/DexterInd/GrovePi
+ 	2.- Posteriormente deberemos de instalarlo con el siguiente comando:
+ 		sudo bash /home/pi/Dexter/GrovePi/Script/install_scratch.sh
+ 	3.- Para realizar la última actualización del firmware por lo cual nos posicionaremos en la carpeta llamada "Firmware" dentro del proyecto y posteriormente cambiaremos los permisos de un script para realizar la actualización:
+ 		sudo chmod +x firmware_update.sh
+ 	4.- Ejecutar el archivo:
+ 		sudo ./firmware_update.sh
 
 #### 5.- Instalando PostgreSQL
-Se instalará PostgreSQL ingresando en la consola de comandos:
-	sudo apt install postgresql libpq-dev postgresql-client postgresql-client-common -y
-Accedemos a postgres ingresando:
-	sudo su postgres
-Crearemos un usuario
-    createuser pi -P --interactive
-Cuando se le solicite, ingrese una contraseña (y recuerde cuál es), seleccione n para superusuario e y para las siguientes dos preguntas
-Nos conectamos a postgres usando su shell
-    psql
-Creamos la base de datos iot_sensors
-	create database iot_sensors
-
-Importamos la base de datos que tenemos en el archivo sql llamado "NOMBRE DEL ARCHIVO SQL BASE DE DATOS"
-
-posteriormente el archivo sql debe de estar en el escritorio y desde la terminal nos colocamos en esa misma ruta e ingresamos 
-	psql -U postgres -d iot_sensors -f {dumpfilename.sql}
+	Se instalará PostgreSQL ingresando en la consola de comandos:
+		sudo apt install postgresql libpq-dev postgresql-client postgresql-client-common -y
+	Accedemos a postgres ingresando:
+		sudo su postgres
+	Crearemos un usuario
+    		createuser pi -P --interactive
+	Cuando se le solicite, ingrese una contraseña (y recuerde cuál es), seleccione n para superusuario e y para las siguientes dos preguntas
+	Nos conectamos a postgres usando su shell
+    		psql
+	Creamos la base de datos iot_sensors
+		create database iot_sensors
+	Importamos la base de datos que tenemos en el archivo sql
+	posteriormente el archivo sql debe de estar en el escritorio y desde la terminal nos colocamos en esa misma ruta e ingresamos 
+		psql -U postgres -d iot_sensors -f {dumpfilename.sql}
 
 NOTA: para mayor ayuda puede consultarl el siguiente post https://opensource.com/article/17/10/set-postgres-database-your-raspberry-pi
 	
 #### 6.- Instalar librerías necesarias
 Es necesario instalar diversas librerías puede insertar las siguientes
+
 	sudo pip install psycopg2
 	sudo pip install configparser
 	sudo pip install paho-mqtt
 	apt install python-usb
 
 Nota: si se tiene algún error sobre que no se encontró las librerías etc. la solución es volver actualizar el Raspberry con
+	
 	sudo apt-get update 
 	sudo apt-get upgrade
 
 #### 7.- Configurar el puerto UART
 Para el uso de la balanza prototipo 2 es necesario configurar el puerto UART deberá de seguir los siguientes pasos:
-1.-Ingrese en la consola el siguiente comando:
-    sudo raspi-config
-2.-Seleccione la opción que contenga "Interfacing Options Configure coonections to peripherals"
-3.-Seleccione la opción que contenga "Serial Enable/Disable shell and kernel messages on the serial connection"
-4.-Seleccione la opción "No"
-5.-Seleccione la opción "Yes/Si"
-6.-Cuando pregunte si desea reiniciar le damos en "Yes/Si"
+	
+	1.- Ingrese en la consola el siguiente comando:
+    		sudo raspi-config
+	2.- Seleccione la opción que contenga "Interfacing Options Configure coonections to peripherals"
+	3.- Seleccione la opción que contenga "Serial Enable/Disable shell and kernel messages on the serial connection"
+	4.- Seleccione la opción "No"
+	5.- Seleccione la opción "Yes/Si"
+	6.- Cuando pregunte si desea reiniciar le damos en "Yes/Si"
 
 #### 8.- Pasar los archivos esenciales para el Edison.
 Si empleara la balanza Alemana Emplear la carpeta ScriptFuncionales - Alemana o ScriptFuncionales
-1.- Crear una carpeta llamada ScriptFuncionales en la dirección raíz puede seguir los siguientes comandos:
-    cd /
-    sudo mkdir ScriptFuncionales
-2.- Copiar los archivos de la carpeta ScriptsFuncionales.zip ubicados en la carpeta Raspberry > funcionalidad a la carpeta del Raspberry creada en el paso 1.
+	
+	1.- Crear una carpeta llamada ScriptFuncionales en la dirección raíz puede seguir los siguientes comandos:
+    		cd /
+    		sudo mkdir ScriptFuncionales
+	2.- Copiar los archivos de la carpeta ScriptsFuncionales.zip ubicados en la carpeta Raspberry > funcionalidad a la carpeta del Raspberry creada en el paso 1.
+
 NOTA: PARA CREAR CARPETAS O MOVER LOS ARCHIVOS SERA ENCESARIO QUE AGREGA LOS COMANDOS "sudo" PARA EMPLEAR EL USO DE ROOT.
 
 #### 9.- Copiar los demonios
@@ -218,7 +227,8 @@ Copiar contenido de la carpeta "Demonios" en /lib/systemd/system/
 
 #### 10.- Cambiamos los permisos de la carpeta SystemStarting
 Con el siguiente comando se podrá cambiar los permisos del archivo:
-    chmod 777 SystemStarting
+
+	chmod 777 SystemStarting
 
 #### 11.- Conectar los sensores al Raspberry
     A) El sensor loudness debe ser conectado en el puerto A1
